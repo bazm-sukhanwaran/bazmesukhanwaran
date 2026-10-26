@@ -257,6 +257,7 @@ footer{background:#042b27;color:#e9e0d1;margin-top:28px}
       <div class="form-row"><label for="workText">اپنا کلام</label><textarea id="workText" rows="6" required placeholder="یہاں اپنا کلام لکھیں"></textarea></div>
       <button class="btn" type="submit">ای میل کے ذریعے تیار کریں</button>
     </form>
+    <p id="submissionStatus" class="notice" role="status" aria-live="polite"></p>
     <p class="notice">اہم: یہ فارم خودکار طور پر ویب سائٹ پر کلام شائع نہیں کرتا۔ یہ آپ کے ای میل پروگرام میں پیغام تیار کرتا ہے۔ براہِ راست جمع کروانے اور ایڈمن پینل کے لیے الگ بیک اینڈ درکار ہوگا۔</p>
   </div>
 </div>
@@ -278,15 +279,38 @@ const submissionModal=document.getElementById('submissionModal');
 document.getElementById('openSubmission').addEventListener('click',e=>{e.preventDefault();submissionModal.classList.add('open')});
 document.getElementById('closeSubmission').addEventListener('click',()=>submissionModal.classList.remove('open'));
 submissionModal.addEventListener('click',e=>{if(e.target===submissionModal)submissionModal.classList.remove('open')});
-document.getElementById('submissionForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const name=document.getElementById('authorName').value.trim();
-  const title=document.getElementById('workTitle').value.trim();
-  const type=document.getElementById('workType').value;
-  const work=document.getElementById('workText').value.trim();
-  const subject=encodeURIComponent('بزمِ سخنوران کے لیے کلام: '+title);
-  const body=encodeURIComponent('شاعر: '+name+'\nعنوان: '+title+'\nصنف: '+type+'\n\nکلام:\n'+work+'\n\nبراہِ کرم اس کلام کا جائزہ لیں۔');
-  window.location.href='mailto:?subject='+subject+'&body='+body;
+document.getElementById('submissionForm').addEventListener('submit', async (e) => {
+e.preventDefault();
+
+const name = document.getElementById('authorName').value.trim();
+const title = document.getElementById('workTitle').value.trim();
+const type = document.getElementById('workType').value;
+const work = document.getElementById('workText').value.trim();
+
+const status = document.getElementById('submissionStatus');
+const button = e.target.querySelector('button[type="submit"]');
+
+status.textContent = 'کلام بھیجا جا رہا ہے، براہِ کرم انتظار کریں۔۔۔';
+button.disabled = true;
+
+try {
+await emailjs.send('service_mxle3t5', 'template_r8ysjzl', {
+from_name: name,
+from_email: 'website@bazmesukhanwaran.com',
+poem_title: title,
+poem_type: type,
+poem_content: work
+});
+
+status.textContent = 'الحمدللہ! آپ کا کلام کامیابی سے بھیج دیا گیا ہے۔';
+e.target.reset();
+
+} catch (error) {
+console.error('EmailJS error:', error);
+status.textContent = 'معذرت! کلام نہیں بھیجا جا سکا۔ براہِ کرم دوبارہ کوشش کریں۔';
+} finally {
+button.disabled = false;
+}
 });
 
 let currentCategory='all';
@@ -320,5 +344,11 @@ document.querySelectorAll('[data-filter]').forEach(link=>link.addEventListener('
   if(['غزل','نظم','اشعار'].includes(filter)){currentCategory=filter;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.category===filter));searchSite('');}
 }));
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><script>
+  emailjs.init({
+    publicKey: 'nk7iKxtBlcROLdil3'
+  });
+</script>
+  
 </body>
 </html>
