@@ -31,6 +31,44 @@
       box-shadow: 0 4px 16px rgba(0,0,0,.04);
     }
 
+    .profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  direction: ltr;
+}
+
+.profile-text {
+  flex: 1;
+  direction: rtl;
+  text-align: right;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    gap: 12px;
+  }
+
+  .profile-photo {
+    width: 105px;
+    height: 125px;
+  }
+
+  .profile-text h1 {
+    font-size: 22px;
+  }
+}
+
     h1, h2 {
       color: #176b45;
     }
@@ -53,10 +91,21 @@
 
 <body>
   <main>
-    <header>
-      <h1>کلامِ ذبیحؔ</h1>
-      <p>ؔشاعر: ذبیح</p>
-      
+
+    <header class="profile-header">
+
+  <img
+    src="images/zabih.jpg"
+    alt="شاعر ذبیحؔ کی تصویر"
+    class="profile-photo"
+  >
+
+  <div class="profile-text">
+    <h1>کلامِ ذبیحؔ</h1>
+    <p>شاعر: عبداللہ راشد شیخ</p>
+    <p class="note">تخلص: ذبیحؔ</p>
+  </div>
+
     </header>
 
     <section class="poem">
