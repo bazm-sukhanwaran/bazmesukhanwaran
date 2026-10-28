@@ -9,6 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 20px;
@@ -32,42 +36,30 @@
     }
 
     .profile-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  direction: ltr;
-}
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      direction: ltr;
+    }
 
-.profile-text {
-  flex: 1;
-  direction: rtl;
-  text-align: right;
-}
+    .profile-text {
+      flex: 1;
+      min-width: 0;
+      direction: rtl;
+      text-align: right;
+    }
 
-.profile-photo {
-  width: 140px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 2px solid #e5e7eb;
-}
-
-@media (max-width: 480px) {
-  .profile-header {
-    gap: 12px;
-  }
-
-  .profile-photo {
-    width: 105px;
-    height: 125px;
-  }
-
-  .profile-text h1 {
-    font-size: 22px;
-  }
-}
+    .profile-photo {
+      display: block;
+      flex: 0 0 auto;
+      width: 140px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid #e5e7eb;
+    }
 
     h1, h2 {
       color: #176b45;
@@ -75,7 +67,43 @@
 
     .poem {
       text-align: center;
+    }
+
+    .poem-text {
       white-space: pre-line;
+      overflow-wrap: anywhere;
+    }
+
+    .poem-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid #edf0ec;
+      direction: rtl;
+    }
+
+    .like-btn {
+      background: #fff;
+      color: #176b45;
+      border: 1px solid #176b45;
+      border-radius: 25px;
+      padding: 6px 16px;
+      font-family: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .like-btn.liked {
+      background: #176b45;
+      color: #fff;
+    }
+
+    .like-count {
+      color: #68746c;
+      font-size: 13px;
     }
 
     a {
@@ -86,6 +114,33 @@
       color: #68746c;
       font-size: 14px;
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
+
+      main {
+        margin: 16px auto;
+      }
+
+      header, .poem {
+        padding: 16px;
+      }
+
+      .profile-header {
+        gap: 12px;
+      }
+
+      .profile-photo {
+        width: 105px;
+        height: 125px;
+      }
+
+      .profile-text h1 {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 
@@ -93,24 +148,23 @@
   <main>
 
     <header class="profile-header">
+      <img
+        src="images/zabih.jpg"
+        alt="شاعر ذبیحؔ کی تصویر"
+        class="profile-photo"
+      >
 
-  <img
-    src="images/zabih.jpg"
-    alt="شاعر ذبیحؔ کی تصویر"
-    class="profile-photo"
-  >
-
-  <div class="profile-text">
-    <h1>کلامِ ذبیحؔ</h1>
-    <p>شاعر: عبداللہ راشد شیخ</p>
-    <p class="note">تخلص: ذبیحؔ</p>
-  </div>
-
+      <div class="profile-text">
+        <h1>کلامِ ذبیحؔ</h1>
+        <p>شاعر: عبداللہ راشد شیخ</p>
+        <p class="note">تخلص: ذبیحؔ</p>
+      </div>
     </header>
 
-    <section class="poem">
+    <section class="poem" data-poem-id="ghazal-1">
       <h2>پہلی غزل</h2>
-      <p> ۔ہم نے ہنس کر اسے گزارا ہے
+
+      <p class="poem-text">ہم نے ہنس کر اسے گزارا ہے
 تیرا غم بھی تو اک سہارا ہے
 
 کوئی شکوہ نہیں زمانے سے
@@ -122,19 +176,79 @@
 عمر گزری ہے خود سے لڑتے ہوئے
 خود کو کھو کر خودی کو پایا ہے
 
-ڈوبتی کشتیٔ کو اب  میری
-مولٰی تیرا ہی تو سہارا ہے 
+ڈوبتی کشتیٔ کو اب میری
+مولٰی تیرا ہی تو سہارا ہے
 
-کیوں ذبیحؔ اتنا دل لگاتے ہو 
+کیوں ذبیحؔ اتنا دل لگاتے ہو
 اس جہاں سے سبھی کو جانا ہے</p>
+
+      <div class="poem-actions">
+        <button class="like-btn" type="button" aria-pressed="false">
+          ♡ پسند آیا
+        </button>
+        <span class="like-count" aria-live="polite">0 پسند</span>
+      </div>
     </section>
 
-    <section class="poem">
+    <section class="poem" data-poem-id="creation-2">
       <h2>دوسری تخلیق</h2>
-      <p>یہاں اپنی دوسری غزل، نظم یا تخلیق شامل کریں۔</p>
+
+      <p class="poem-text">یہاں اپنی دوسری غزل، نظم یا تخلیق شامل کریں۔</p>
+
+      <div class="poem-actions">
+        <button class="like-btn" type="button" aria-pressed="false">
+          ♡ پسند آیا
+        </button>
+        <span class="like-count" aria-live="polite">0 پسند</span>
+      </div>
     </section>
 
-    <p><a href="index.html">← مرکزی صفحے پر واپس جائیں</a></p>
+    <p>
+      <a href="index.html">← مرکزی صفحے پر واپس جائیں</a>
+    </p>
+
   </main>
+
+  <script>
+    document.querySelectorAll('.poem').forEach((poem) => {
+      const button = poem.querySelector('.like-btn');
+      const countLabel = poem.querySelector('.like-count');
+      const poemId = poem.dataset.poemId;
+
+      const likedKey = 'bazm-liked-' + poemId;
+      const countKey = 'bazm-like-count-' + poemId;
+
+      let count = Number(localStorage.getItem(countKey)) || 0;
+      let liked = localStorage.getItem(likedKey) === 'yes';
+
+      function render() {
+        button.classList.toggle('liked', liked);
+        button.setAttribute('aria-pressed', String(liked));
+
+        button.textContent = liked
+          ? '♥ پسند کیا'
+          : '♡ پسند آیا';
+
+        countLabel.textContent = count + ' پسند';
+      }
+
+      button.addEventListener('click', () => {
+        if (liked) {
+          count = Math.max(0, count - 1);
+          liked = false;
+        } else {
+          count += 1;
+          liked = true;
+        }
+
+        localStorage.setItem(countKey, String(count));
+        localStorage.setItem(likedKey, liked ? 'yes' : 'no');
+
+        render();
+      });
+
+      render();
+    });
+  </script>
 </body>
 </html>
