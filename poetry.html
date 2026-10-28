@@ -9,138 +9,128 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+   * {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #fff;
-      color: #26352d;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      line-height: 2.3;
-    }
+body {
+  margin: 0;
+  padding: 16px;
+  background: #fff;
+  color: #26352d;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2.3;
+  overflow-wrap: break-word;
+}
 
-    main {
-      max-width: 800px;
-      margin: 30px auto;
-    }
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 25px auto;
+}
 
-    header, .poem {
-      padding: 22px;
-      margin-bottom: 20px;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.04);
-    }
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  direction: ltr;
+}
 
-    .profile-header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      direction: ltr;
-    }
+.profile-text {
+  flex: 1;
+  min-width: 0;
+  direction: rtl;
+  text-align: right;
+}
 
-    .profile-text {
-      flex: 1;
-      min-width: 0;
-      direction: rtl;
-      text-align: right;
-    }
+.profile-photo {
+  display: block;
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+}
 
-    .profile-photo {
-      display: block;
-      flex: 0 0 auto;
-      width: 140px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 2px solid #e5e7eb;
-    }
+header,
+.poem {
+  width: 100%;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.04);
+  background: #fff;
+}
 
-    h1, h2 {
-      color: #176b45;
-    }
+.poem {
+  text-align: center;
+  white-space: normal;
+}
 
-    .poem {
-      text-align: center;
-    }
+.poem p {
+  white-space: pre-line;
+  line-height: 2.5;
+}
 
-    .poem-text {
-      white-space: pre-line;
-      overflow-wrap: anywhere;
-    }
+.poem-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  direction: ltr;
+  margin-top: 18px;
+}
 
-    .poem-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-      padding-top: 12px;
-      border-top: 1px solid #edf0ec;
-      direction: rtl;
-    }
+.like-btn {
+  border: 1px solid #176b45;
+  border-radius: 8px;
+  background: white;
+  color: #176b45;
+  padding: 4px 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
 
-    .like-btn {
-      background: #fff;
-      color: #176b45;
-      border: 1px solid #176b45;
-      border-radius: 25px;
-      padding: 6px 16px;
-      font-family: inherit;
-      font-size: 14px;
-      cursor: pointer;
-    }
+.like-btn.liked {
+  background: #176b45;
+  color: white;
+}
 
-    .like-btn.liked {
-      background: #176b45;
-      color: #fff;
-    }
+.like-count {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
 
-    .like-count {
-      color: #68746c;
-      font-size: 13px;
-    }
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
 
-    a {
-      color: #176b45;
-    }
+  main {
+    margin: 12px auto;
+  }
 
-    .note {
-      color: #68746c;
-      font-size: 14px;
-    }
+  header,
+  .poem {
+    padding: 15px;
+  }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 12px;
-      }
+  .profile-header {
+    gap: 12px;
+  }
 
-      main {
-        margin: 16px auto;
-      }
+  .profile-photo {
+    width: 100px;
+    height: 120px;
+  }
 
-      header, .poem {
-        padding: 16px;
-      }
-
-      .profile-header {
-        gap: 12px;
-      }
-
-      .profile-photo {
-        width: 105px;
-        height: 125px;
-      }
-
-      .profile-text h1 {
-        font-size: 22px;
-      }
-    }
+  .profile-text h1 {
+    font-size: 21px;
+  }
+}
   </style>
 </head>
 
