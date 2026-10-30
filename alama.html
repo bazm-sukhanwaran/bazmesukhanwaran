@@ -217,46 +217,44 @@ header,
 
   </main>
 
-  <script>
-    document.querySelectorAll('.poem').forEach((poem) => {
-      const button = poem.querySelector('.like-btn');
-      const countLabel = poem.querySelector('.like-count');
-      const poemId = poem.dataset.poemId;
+<script>
+document.querySelectorAll('.poem').forEach((poem, index) => {
+  const button = poem.querySelector('.like-btn');
+  const countLabel = poem.querySelector('.like-count');
 
-      const likedKey = 'bazm-liked-' + poemId;
-      const countKey = 'bazm-like-count-' + poemId;
+  if (!button || !countLabel) return;
 
-      let count = Number(localStorage.getItem(countKey)) || 0;
-      let liked = localStorage.getItem(likedKey) === 'yes';
+  const poemId = poem.dataset.poemId || `poem-${index + 1}`;
+  const likedKey = `bazm-liked-${poemId}`;
+  const countKey = `bazm-like-count-${poemId}`;
 
-      function render() {
-        button.classList.toggle('liked', liked);
-        button.setAttribute('aria-pressed', String(liked));
+  let count = Number(localStorage.getItem(countKey)) || 0;
+  let liked = localStorage.getItem(likedKey) === 'yes';
 
-        button.textContent = liked
-          ? '♥ '
-          : '♡ ';
+  function render() {
+    button.textContent = liked ? '♥' : '♡';
+    button.classList.toggle('liked', liked);
+    button.setAttribute('aria-pressed', String(liked));
+    countLabel.textContent = String(count);
+  }
 
-        countLabel.textContent = count + ' ';
-      }
+  button.addEventListener('click', () => {
+    if (liked) {
+      count = Math.max(0, count - 1);
+      liked = false;
+    } else {
+      count += 1;
+      liked = true;
+    }
 
-      button.addEventListener('click', () => {
-        if (liked) {
-          count = Math.max(0, count - 1);
-          liked = false;
-        } else {
-          count += 1;
-          liked = true;
-        }
+    localStorage.setItem(countKey, String(count));
+    localStorage.setItem(likedKey, liked ? 'yes' : 'no');
 
-        localStorage.setItem(countKey, String(count));
-        localStorage.setItem(likedKey, liked ? 'yes' : 'no');
+    render();
+  });
 
-        render();
-      });
-
-      render();
-    });
-  </script>
+  render();
+});
+</script>
 </body>
 </html>
