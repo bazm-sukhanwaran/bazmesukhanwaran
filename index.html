@@ -8,88 +8,683 @@
 <title>بزمِ سخنوران | اردو ادب کا آن لائن دیوان</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
-:root{--green:#073b35;--green2:#0d5147;--gold:#d9ad62;--cream:#fbf7ef;--ink:#173a36;--muted:#6b7772;--line:#e8e1d5;--white:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Nastaliq Urdu",serif;line-height:2}
-a{color:inherit;text-decoration:none}
-button,input,textarea,select{font:inherit}
-.topbar{background:#042b27;color:#fff;border-bottom:1px solid #b88b4c;position:sticky;top:0;z-index:10}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 22px}
-.brand{display:flex;align-items:center;gap:10px;color:#f2d39a;white-space:nowrap}
-.brand .feather{font-size:35px}
-.brand strong{font-size:24px;line-height:1.5}
-.brand small{display:block;color:#e8dfce;font-size:10px}
-.navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:14px}
-.navlinks a:hover{color:var(--gold)}
-.menu-toggle{display:none;background:transparent;color:white;border:1px solid #64847c;border-radius:8px;padding:3px 10px}
-.hero{background:linear-gradient(100deg,rgba(2,31,27,.88),rgba(5,55,48,.72)),radial-gradient(ellipse at 78% 30%,#83623e,transparent 40%),linear-gradient(120deg,#241b15,#0c3d35);color:white;padding:54px 20px 48px;text-align:center;border-bottom:5px solid #e9dfcf}
-.hero-inner{max-width:900px;margin:auto}
-.hero .eyebrow{color:#e8c88e;font-size:14px}
-.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.5;margin:0;color:#f3d49b;text-shadow:0 3px 20px #000}
-.hero p{font-size:18px;margin:8px 0 22px;color:#f8f0e2}
-.search{max-width:660px;margin:20px auto 0;display:flex;background:#fff;border-radius:40px;overflow:hidden;border:3px solid #e5c98e;box-shadow:0 10px 30px #0003}
-.search input{border:0;outline:0;padding:12px 20px;min-width:0;flex:1;color:#173a36;background:white}
-.search button{border:0;background:var(--green2);color:white;padding:10px 24px;cursor:pointer}
-.search button:hover,.btn:hover{filter:brightness(1.1)}
-.container{max-width:1200px;margin:auto;padding:24px 20px}
-.quicklinks{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:-2px}
-.quick{background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;padding:12px 8px;box-shadow:0 3px 10px #102b2510;transition:.2s}
-.quick:hover{transform:translateY(-3px);border-color:var(--gold)}
-.quick .icon{display:block;font-size:25px;color:var(--green2)}
-.quick span:last-child{font-size:14px}
-.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px;border-bottom:2px solid var(--line);padding-bottom:7px}
-.section-head h2{font-size:23px;margin:0}
-.section-head a{color:var(--green2);font-size:13px}
-.layout{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:18px;align-items:start}
-.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px;box-shadow:0 4px 15px #0a342b08}
-.panel-title{font-size:18px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-.poet-list{list-style:none;padding:0;margin:0}
-.poet-list li{border-bottom:1px solid #f0ece5;padding:6px 0}
-.poet-list a{display:flex;justify-content:space-between;gap:10px}
-.poet-list a:hover{color:#a97832}
-.badge{font:12px "Noto Sans Arabic",sans-serif;color:var(--green2);background:#e8f2ee;border-radius:20px;padding:2px 8px;align-self:center}
-.poet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.poet-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;text-align:center;background:#fff}
+
+:root {
+  --green: #073b35;
+  --green2: #0d5147;
+  --gold: #d9ad62;
+  --cream: #fbf7ef;
+  --ink: #173a36;
+  --muted: #6b7772;
+  --line: #e8e1d5;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Noto Nastaliq Urdu", serif;
+  line-height: 2;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.topbar {
+  background: #042b27;
+  color: #fff;
+  border-bottom: 1px solid #b88b4c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f2d39a;
+  white-space: nowrap;
+}
+
+.brand .feather {
+  font-size: 35px;
+}
+
+.brand strong {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.brand small {
+  display: block;
+  color: #e8dfce;
+  font-size: 10px;
+}
+
+.navlinks {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.navlinks a:hover {
+  color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #64847c;
+  border-radius: 8px;
+  padding: 3px 10px;
+}
+
+.hero {
+  background:
+    linear-gradient(100deg, rgba(2,31,27,.88), rgba(5,55,48,.72)),
+    radial-gradient(ellipse at 78% 30%, #83623e, transparent 40%),
+    linear-gradient(120deg, #241b15, #0c3d35);
+  color: white;
+  padding: 54px 20px 48px;
+  text-align: center;
+  border-bottom: 5px solid #e9dfcf;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero .eyebrow {
+  color: #e8c88e;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 68px);
+  line-height: 1.5;
+  margin: 0;
+  color: #f3d49b;
+  text-shadow: 0 3px 20px #000;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 8px 0 22px;
+  color: #f8f0e2;
+}
+
+.search {
+  max-width: 660px;
+  margin: 20px auto 0;
+  display: flex;
+  background: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 3px solid #e5c98e;
+  box-shadow: 0 10px 30px #0003;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  padding: 12px 20px;
+  min-width: 0;
+  flex: 1;
+  color: #173a36;
+  background: white;
+}
+
+.search button {
+  border: 0;
+  background: var(--green2);
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+.search button:hover,
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 20px;
+}
+
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: -2px;
+}
+
+.quick {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+  padding: 12px 8px;
+  box-shadow: 0 3px 10px #102b2510;
+  transition: .2s;
+}
+
+.quick:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.quick .icon {
+  display: block;
+  font-size: 25px;
+  color: var(--green2);
+}
+
+.quick span:last-child {
+  font-size: 14px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 14px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 7px;
+}
+
+.section-head h2 {
+  font-size: 23px;
+  margin: 0;
+}
+
+.section-head a {
+  color: var(--green2);
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 15px #0a342b08;
+}
+
+.panel-title {
+  font-size: 18px;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.poet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.poet-list li {
+  border-bottom: 1px solid #f0ece5;
+  padding: 6px 0;
+}
+
+.poet-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.poet-list a:hover {
+  color: #a97832;
+}
+
+.badge {
+  font: 12px "Noto Sans Arabic", sans-serif;
+  color: var(--green2);
+  background: #e8f2ee;
+  border-radius: 20px;
+  padding: 2px 8px;
+  align-self: center;
+}
+
+/* شعراء: ہر قطار میں تین پروفائل */
+.poet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.poet-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  background: #fff;
+}
+
+.poet-avatar {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f5f1;
+  font-size: 30px;
+}
+
 .poet-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.poet-card h3{font-size:15px;margin:8px 4px 0}
-.poet-card p{font-size:11px;color:var(--muted);margin:0 4px 7px}
-.btn{display:inline-block;border:0;background:var(--green2);color:#fff;border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer;margin:0 0 10px}
-.poetry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.poetry-card{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#fff,#fcfaf5);padding:14px;position:relative}
-.poetry-card .type{font-size:12px;color:#a97832}
-.poetry-card h3{font-size:18px;margin:4px 0}
-.poetry-card .couplet{white-space:pre-line;font-size:15px;line-height:2.2;margin:8px 0 12px}
-.poetry-card .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;border-top:1px solid var(--line);padding-top:7px}
-.submit-box{background:linear-gradient(145deg,#073b35,#0e5147);color:#fff;border-radius:14px;padding:18px;margin-bottom:18px}
-.submit-box h3{color:#f0ce8d;margin:0;font-size:21px}
-.submit-box p{font-size:13px;line-height:2}
-.submit-box a{display:inline-block;border:1px solid #e6c887;border-radius:8px;padding:3px 14px;color:#f7dba7}
-.category-list{display:flex;flex-wrap:wrap;gap:8px}
-.category-list button{background:#fbf8f2;border:1px solid var(--line);border-radius:22px;padding:5px 12px;cursor:pointer;color:var(--ink);font-size:13px}
-.category-list button.active,.category-list button:hover{background:var(--green2);color:white}
-.empty{display:none;text-align:center;padding:24px;color:var(--muted)}
-footer{background:#042b27;color:#e9e0d1;margin-top:28px}
-.footer-inner{max-width:1200px;margin:auto;padding:24px 20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-.footer-inner strong{color:#f0ce8d;font-size:22px}
-.footer-inner small{display:block;color:#c3cfc9}
-.copyright{border-top:1px solid #31564f;text-align:center;padding:9px;font-size:12px;color:#c7d2cc}
-.modal{display:none;position:fixed;inset:0;background:#001d19b8;z-index:20;padding:20px;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.modal-card{max-width:560px;width:100%;max-height:90vh;overflow:auto;background:#fffaf2;border-radius:16px;padding:22px;position:relative}
-.close{position:absolute;left:15px;top:8px;border:0;background:transparent;font-size:28px;cursor:pointer;color:var(--green)}
-.modal-card h2{margin-top:0}
-.form-row{margin:10px 0}
-.form-row label{display:block;font-size:14px}
-.form-row input,.form-row textarea,.form-row select{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff}
-.notice{font-family:"Noto Sans Arabic",sans-serif;font-size:12px;color:#596963;line-height:1.8;background:#f0f5f1;border-radius:8px;padding:10px}
-@media(max-width:950px){.layout{grid-template-columns:1fr 2fr}.layout aside:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:14px}.quicklinks{grid-template-columns:repeat(3,1fr)}.poet-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){.nav{padding:8px 14px;flex-wrap:wrap}.brand strong{font-size:19px}.brand .feather{font-size:28px}.menu-toggle{display:block}.navlinks{display:none;width:100%;padding:8px 0;gap:12px}.navlinks.show{display:flex}.hero{padding:35px 15px}.hero p{font-size:15px}.container{padding:18px 13px}.quicklinks{grid-template-columns:repeat(3,1fr);gap:7px}.quick{padding:8px 4px}.quick span:last-child{font-size:12px}.layout{grid-template-columns:1fr}.layout aside:last-child{grid-column:auto;display:block}.poet-grid{grid-template-columns:repeat(2,1fr)}.poetry-grid{grid-template-columns:1fr}.section-head h2{font-size:20px}.footer-inner{display:block;text-align:center}.footer-inner div{margin:8px 0}}
+
+.poet-card h3 {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 8px 4px 2px;
+  overflow-wrap: anywhere;
+}
+
+.poet-card p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 2px 4px 7px;
+  overflow-wrap: anywhere;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  background: var(--green2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 0 0 10px;
+}
+
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.poetry-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fcfaf5);
+  padding: 14px;
+  position: relative;
+}
+
+.poetry-card .type {
+  font-size: 12px;
+  color: #a97832;
+}
+
+.poetry-card h3 {
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.poetry-card .couplet {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 2.2;
+  margin: 8px 0 12px;
+}
+
+.poetry-card .meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+  border-top: 1px solid var(--line);
+  padding-top: 7px;
+}
+
+.submit-box {
+  background: linear-gradient(145deg, #073b35, #0e5147);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.submit-box h3 {
+  color: #f0ce8d;
+  margin: 0;
+  font-size: 21px;
+}
+
+.submit-box p {
+  font-size: 13px;
+  line-height: 2;
+}
+
+.submit-box a {
+  display: inline-block;
+  border: 1px solid #e6c887;
+  border-radius: 8px;
+  padding: 3px 14px;
+  color: #f7dba7;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-list button {
+  background: #fbf8f2;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 5px 12px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.category-list button.active,
+.category-list button:hover {
+  background: var(--green2);
+  color: white;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+}
+
+footer {
+  background: #042b27;
+  color: #e9e0d1;
+  margin-top: 28px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-inner strong {
+  color: #f0ce8d;
+  font-size: 22px;
+}
+
+.footer-inner small {
+  display: block;
+  color: #c3cfc9;
+}
+
+.copyright {
+  border-top: 1px solid #31564f;
+  text-align: center;
+  padding: 9px;
+  font-size: 12px;
+  color: #c7d2cc;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #001d19b8;
+  z-index: 20;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-card {
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  background: #fffaf2;
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--green);
+}
+
+.modal-card h2 {
+  margin-top: 0;
+}
+
+.form-row {
+  margin: 10px 0;
+}
+
+.form-row label {
+  display: block;
+  font-size: 14px;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px;
+  background: #fff;
+}
+
+.notice {
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-size: 12px;
+  color: #596963;
+  line-height: 1.8;
+  background: #f0f5f1;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* درمیانی اسکرین */
+@media (max-width: 950px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .layout aside:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .quicklinks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .poet-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* موبائل */
+@media (max-width: 650px) {
+  .nav {
+    padding: 8px 14px;
+    flex-wrap: wrap;
+  }
+
+  .brand strong {
+    font-size: 19px;
+  }
+
+  .brand .feather {
+    font-size: 28px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navlinks {
+    display: none;
+    width: 100%;
+    padding: 8px 0;
+    gap: 12px;
+  }
+
+  .navlinks.show {
+    display: flex;
+  }
+
+  .hero {
+    padding: 35px 15px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 18px 13px;
+  }
+
+  .quicklinks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .quick {
+    padding: 8px 4px;
+  }
+
+  .quick span:last-child {
+    font-size: 12px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .layout aside:last-child {
+    grid-column: auto;
+    display: block;
+  }
+
+  /* موبائل پر بھی تین شاعر ایک قطار میں */
+  .poet-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .poet-avatar {
+    height: 115px;
+  }
+
+  .poet-card h3 {
+    font-size: 12px;
+    margin: 6px 2px 2px;
+  }
+
+  .poet-card p {
+    font-size: 9px;
+    margin: 2px;
+  }
+
+  .poet-card .btn {
+    padding: 4px 5px;
+    font-size: 9px;
+    margin: 4px 1px 7px;
+  }
+
+  .poetry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-head h2 {
+    font-size: 20px;
+  }
+
+  .footer-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .footer-inner div {
+    margin: 8px 0;
+  }
+}
 </style>
 </head>
 <body>
