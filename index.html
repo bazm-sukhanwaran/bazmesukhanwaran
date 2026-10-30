@@ -6,6 +6,7 @@
 <meta name="description" content="بزمِ سخنوران — اردو شاعری، غزل، نظم، اشعار اور شعراء کا تعارف">
 <meta name="theme-color" content="#073b35">
 <title>بزمِ سخنوران | اردو ادب کا آن لائن دیوان</title>
+```html
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
 
@@ -49,6 +50,7 @@ select {
   font: inherit;
 }
 
+/* اوپر کا نیویگیشن بار */
 .topbar {
   background: #042b27;
   color: #fff;
@@ -112,6 +114,7 @@ select {
   padding: 3px 10px;
 }
 
+/* مرکزی ہیرو سیکشن */
 .hero {
   background:
     linear-gradient(100deg, rgba(2,31,27,.88), rgba(5,55,48,.72)),
@@ -147,6 +150,7 @@ select {
   color: #f8f0e2;
 }
 
+/* تلاش */
 .search {
   max-width: 660px;
   margin: 20px auto 0;
@@ -181,12 +185,14 @@ select {
   filter: brightness(1.1);
 }
 
+/* مرکزی مواد */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 24px 20px;
 }
 
+/* فوری لنکس */
 .quicklinks {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -219,6 +225,7 @@ select {
   font-size: 14px;
 }
 
+/* سیکشن عنوان */
 .section-head {
   display: flex;
   align-items: center;
@@ -239,9 +246,10 @@ select {
   font-size: 13px;
 }
 
+/* مرکزی تین کالم لے آؤٹ */
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 2.2fr 1fr;
   gap: 18px;
   align-items: start;
 }
@@ -292,68 +300,81 @@ select {
   align-self: center;
 }
 
-/* شعراء: ہر قطار میں تین پروفائل */
+/* شاعر پروفائل: کمپیوٹر پر 3 کارڈز */
 .poet-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
   align-items: stretch;
 }
 
 .poet-card {
   min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   text-align: center;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.poet-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px #0a342b12;
 }
 
 .poet-avatar {
   width: 100%;
-  height: 150px;
+  height: 190px;
   overflow: hidden;
+  background: #eef4f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f5f1;
-  font-size: 30px;
 }
 
 .poet-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
 .poet-card h3 {
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 8px 4px 2px;
-  overflow-wrap: anywhere;
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 10px 5px 0;
 }
 
 .poet-card p {
-  font-size: 11px;
-  line-height: 1.8;
+  font-size: 12px;
   color: var(--muted);
-  margin: 2px 4px 7px;
-  overflow-wrap: anywhere;
+  margin: 2px 6px 10px;
 }
 
+.poet-card .btn {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+/* بٹن */
 .btn {
   display: inline-block;
   border: 0;
   background: var(--green2);
   color: #fff;
   border-radius: 8px;
-  padding: 5px 12px;
-  font-size: 12px;
+  padding: 6px 14px;
+  font-size: 13px;
   cursor: pointer;
-  margin: 0 0 10px;
 }
 
+/* شاعری کے کارڈ */
 .poetry-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -389,12 +410,14 @@ select {
 .poetry-card .meta {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   color: var(--muted);
   font-size: 11px;
   border-top: 1px solid var(--line);
   padding-top: 7px;
 }
 
+/* کلام جمع کرانے کا باکس */
 .submit-box {
   background: linear-gradient(145deg, #073b35, #0e5147);
   color: #fff;
@@ -422,6 +445,7 @@ select {
   color: #f7dba7;
 }
 
+/* اصناف */
 .category-list {
   display: flex;
   flex-wrap: wrap;
@@ -451,6 +475,7 @@ select {
   color: var(--muted);
 }
 
+/* فٹر */
 footer {
   background: #042b27;
   color: #e9e0d1;
@@ -486,6 +511,7 @@ footer {
   color: #c7d2cc;
 }
 
+/* فارم پاپ اپ */
 .modal {
   display: none;
   position: fixed;
@@ -559,13 +585,13 @@ footer {
 /* درمیانی اسکرین */
 @media (max-width: 950px) {
   .layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-columns: 1fr 2fr;
   }
 
   .layout aside:last-child {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 14px;
   }
 
@@ -573,8 +599,18 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* ٹیبلٹ پر بھی تین شاعر */
   .poet-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .poet-avatar {
+    height: 160px;
+  }
+
+  .poetry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -634,7 +670,7 @@ footer {
   }
 
   .layout {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .layout aside:last-child {
@@ -642,34 +678,31 @@ footer {
     display: block;
   }
 
-  /* موبائل پر بھی تین شاعر ایک قطار میں */
+  /* موبائل پر دو شاعر ایک قطار میں */
   .poet-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .poet-avatar {
-    height: 115px;
+    height: 145px;
   }
 
   .poet-card h3 {
-    font-size: 12px;
-    margin: 6px 2px 2px;
+    font-size: 15px;
   }
 
   .poet-card p {
-    font-size: 9px;
-    margin: 2px;
+    font-size: 11px;
   }
 
   .poet-card .btn {
-    padding: 4px 5px;
-    font-size: 9px;
-    margin: 4px 1px 7px;
+    font-size: 12px;
+    padding: 5px 10px;
   }
 
   .poetry-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .section-head h2 {
@@ -683,6 +716,21 @@ footer {
 
   .footer-inner div {
     margin: 8px 0;
+  }
+}
+
+/* بہت چھوٹی اسکرین */
+@media (max-width: 360px) {
+  .poet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poet-avatar {
+    height: 210px;
+  }
+
+  .search button {
+    padding: 8px 12px;
   }
 }
 </style>
