@@ -3,257 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شاعر کا پروفائل | بزمِ سخنوران</title>
+  <title>کلامِ اقبال | بزمِ سخنوران</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #ffffff;
-      color: #26352d;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      line-height: 2.2;
-    }
+   * {
+  box-sizing: border-box;
+}
 
-    .profile {
-      max-width: 750px;
-      margin: 35px auto;
-      padding: 25px;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      box-shadow: 0 5px 22px rgba(0,0,0,.05);
-    }
+body {
+  margin: 0;
+  padding: 16px;
+  background: #fff;
+  color: #26352d;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2.3;
+  overflow-wrap: break-word;
+}
 
-    h1, h2 {
-      color: #176b45;
-    }
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 25px auto;
+}
 
-    .tag {
-      color: #68746c;
-    }
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  direction: ltr;
+  width: 100%;
+}
 
-    .poetry-link {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 22px;
-      background: #176b45;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .back {
-      display: block;
-      margin-top: 25px;
-      color: #176b45;
-    }
-    .poet-photo {
+.profile-photo {
   display: block;
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  border: 3px solid #e5e7eb;
-    }
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+.profile-text h1 {
+  margin-top: 0;
+}
+
+.intro {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    gap: 12px;
+  }
+
+  .profile-photo {
+    width: 95px;
+    height: 115px;
+  }
+
+  .profile-text h1 {
+    font-size: 21px;
+  }
+}
+header,
+.poem {
+  width: 100%;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.04);
+  background: #fff;
+}
+
+.poem {
+  text-align: center;
+  white-space: normal;
+}
+
+.poem p {
+  white-space: pre-line;
+  line-height: 2.5;
+}
+
+.poem-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  direction: ltr;
+  margin-top: 18px;
+}
+
+.like-btn {
+  border: 1px solid #176b45;
+  border-radius: 8px;
+  background: white;
+  color: #176b45;
+  padding: 4px 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.like-btn.liked {
+  background: #176b45;
+  color: white;
+}
+
+.like-count {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    margin: 12px auto;
+  }
+
+  header,
+  .poem {
+    padding: 15px;
+  }
+
+  .profile-header {
+    gap: 12px;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 120px;
+  }
+
+  .profile-text h1 {
+    font-size: 21px;
+  }
+}
   </style>
 </head>
 
 <body>
-  <main class="profile">
-    <p class="tag">بزمِ سخنوران — تعارفِ شعراء</p>
+  <main>
 
-    <img src="images/zabih.jpg"
-     alt="شاعر ذبیحؔ کی تصویر"
-     class="poet-photo">
-    <h1> شیخ محمد اقبال</h1>
-    <h2>تخلص: اقبال</h2>
+  <header class="profile-header">
+  <img
+    src="images/zabih.jpg"
+    alt="شاعر ذبیحؔ کی تصویر"
+    class="profile-photo"
+  >
 
-    <p><strong>مقام:</strong> لاہور، پاکستان</p>
+  <div class="profile-text">
+    <h1>کلامِ اقبال</h1>
+    <p>شاعر: علامہ محمد اقبال</p>
+    <p class="note">تخلص: اقبال</p>
+  </div>
+</header>
 
-    <h2>ادبی تعارف</h2>
-    <p> <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شاعر کا پروفائل | بزمِ سخنوران</title>
+<section class="poem intro">
+  <h2>ادبی تعارف</h2>
+  <p>
+    ذبیحؔ، جن کا اصل نام عبداللہ راشد شیخ ہے، اردو شاعری سے
+    وابستہ ہیں۔ ان کے کلام میں احساسات، زندگی کے تجربات،
+    خود شناسی اور امید جیسے موضوعات نمایاں ہیں۔
+  </p>
+</section>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <section class="poem" data-poem-id="ghazal-1">
+      <h2> شعر</h2>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #ffffff;
-      color: #26352d;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      line-height: 2.2;
-    }
+      <p class="poem-text">مانا کہ تیری دید کے قابل نہیں ہوں میں
+تو میرا شوق دیکھ مرا انتظار دیکھ
+</p>
 
-    .profile {
-      max-width: 750px;
-      margin: 35px auto;
-      padding: 25px;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      box-shadow: 0 5px 22px rgba(0,0,0,.05);
-    }
+      <div class="poem-actions">
+        <button class="like-btn" type="button" aria-pressed="false">
+          ♡ 
+        </button>
+        <span class="like-count" aria-live="polite">0</span>
+      </div>
+    </section>
 
-    h1, h2 {
-      color: #176b45;
-    }
+    <section class="poem" data-poem-id="creation-2">
+      <h2>شعر</h2>
 
-    .tag {
-      color: #68746c;
-    }
+      <p class="poem-text">خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے
+خدا بندے سے خود پوچھے بتا تیری رضا کیا ہے
+</p>
 
-    .poetry-link {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 22px;
-      background: #176b45;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
+      <div class="poem-actions">
+        <button class="like-btn" type="button" aria-pressed="false">
+          ♡
+        </button>
+        <span class="like-count" aria-live="polite">0</span>
+      </div>
+    </section>
 
-    .back {
-      display: block;
-      margin-top: 25px;
-      color: #176b45;
-    }
-    .poet-photo {
-  display: block;
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  border: 3px solid #e5e7eb;
-    }
-  </style>
-</head>
-
-<body>
-  <main class="profile">
-    <p class="tag">بزمِ سخنوران — تعارفِ شعراء</p>
-
-    <img src="images/zabih.jpg"
-     alt="شاعر ذبیحؔ کی تصویر"
-     class="poet-photo">
-    <h1>عبداللہ راشد شیخ</h1>
-    <h2>تخلص: ذبیحؔ</h2>
-
-    <p><strong>مقام:</strong> وجے پورہ، کرناٹک، بھارت</p>
-
-    <h2>ادبی تعارف</h2>
     <p>
-      <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شاعر کا پروفائل | بزمِ سخنوران</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #ffffff;
-      color: #26352d;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      line-height: 2.2;
-    }
-
-    .profile {
-      max-width: 750px;
-      margin: 35px auto;
-      padding: 25px;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      box-shadow: 0 5px 22px rgba(0,0,0,.05);
-    }
-
-    h1, h2 {
-      color: #176b45;
-    }
-
-    .tag {
-      color: #68746c;
-    }
-
-    .poetry-link {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 22px;
-      background: #176b45;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .back {
-      display: block;
-      margin-top: 25px;
-      color: #176b45;
-    }
-    .poet-photo {
-  display: block;
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  border: 3px solid #e5e7eb;
-    }
-  </style>
-</head>
-
-<body>
-  <main class="profile">
-    <p class="tag">بزمِ سخنوران — تعارفِ شعراء</p>
-
-    <img src="images/zabih.jpg"
-     alt="شاعر ذبیحؔ کی تصویر"
-     class="poet-photo">
-    <h1>عبداللہ راشد شیخ</h1>
-    <h2>تخلص: ذبیحؔ</h2>
-
-    <p><strong>مقام:</strong> وجے پورہ، کرناٹک، بھارت</p>
-
-    <h2>ادبی تعارف</h2>
-    <p>
-      اس حصے میں شاعر کا تفصیلی ادبی تعارف، ادبی سفر،
-      شاعری سے وابستگی اور خدمات شامل کی جا سکتی ہیں۔
+      <a href="index.html">← مرکزی صفحے پر واپس جائیں</a>
     </p>
 
-    <a class="poetry-link" href="poetry.html">میرا کلام پڑھیے</a>
-
-    <a class="back" href="index.html">← بزمِ سخنوران کے مرکزی صفحے پر واپس جائیں</a>
   </main>
-</body>
-</html>
-    </p>
 
-    <a class="poetry-link" href="poetry.html">میرا کلام پڑھیے</a>
+  <script>
+    document.querySelectorAll('.poem').forEach((poem) => {
+      const button = poem.querySelector('.like-btn');
+      const countLabel = poem.querySelector('.like-count');
+      const poemId = poem.dataset.poemId;
 
-    <a class="back" href="index.html">← بزمِ سخنوران کے مرکزی صفحے پر واپس جائیں</a>
-  </main>
-</body>
-</html>
-    </p>
+      const likedKey = 'bazm-liked-' + poemId;
+      const countKey = 'bazm-like-count-' + poemId;
 
-    <a class="poetry-link" href="poetry.html">میرا کلام پڑھیے</a>
+      let count = Number(localStorage.getItem(countKey)) || 0;
+      let liked = localStorage.getItem(likedKey) === 'yes';
 
-    <a class="back" href="index.html">← بزمِ سخنوران کے مرکزی صفحے پر واپس جائیں</a>
-  </main>
+      function render() {
+        button.classList.toggle('liked', liked);
+        button.setAttribute('aria-pressed', String(liked));
+
+        button.textContent = liked
+          ? '♥ '
+          : '♡ ';
+
+        countLabel.textContent = count + ' ';
+      }
+
+      button.addEventListener('click', () => {
+        if (liked) {
+          count = Math.max(0, count - 1);
+          liked = false;
+        } else {
+          count += 1;
+          liked = true;
+        }
+
+        localStorage.setItem(countKey, String(count));
+        localStorage.setItem(likedKey, liked ? 'yes' : 'no');
+
+        render();
+      });
+
+      render();
+    });
+  </script>
 </body>
 </html>
