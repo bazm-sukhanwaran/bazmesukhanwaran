@@ -33,7 +33,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
   direction: ltr;
   width: 100%;
@@ -59,6 +59,10 @@ main {
   margin-top: 0;
 }
 
+.intro {
+  text-align: right;
+}
+
 @media (max-width: 480px) {
   .profile-header {
     gap: 12px;
@@ -67,6 +71,10 @@ main {
   .profile-photo {
     width: 95px;
     height: 115px;
+  }
+
+  .profile-text h1 {
+    font-size: 21px;
   }
 }
 header,
@@ -152,25 +160,28 @@ header,
 <body>
   <main>
 
-    <header class="profile-header">
-      <img
-        src="images/zabih.jpg"
-        alt="شاعر ذبیحؔ کی تصویر"
-        class="profile-photo"
-      >
+  <header class="profile-header">
+  <img
+    src="images/zabih.jpg"
+    alt="شاعر ذبیحؔ کی تصویر"
+    class="profile-photo"
+  >
 
-      <div class="profile-text">
-        <h1>کلامِ ذبیحؔ</h1>
-        <p>شاعر: عبداللہ راشد شیخ</p>
-        <p class="note">تخلص: ذبیحؔ</p>
-      </div>
+  <div class="profile-text">
+    <h1>کلامِ ذبیحؔ</h1>
+    <p>شاعر: عبداللہ راشد شیخ</p>
+    <p class="note">تخلص: ذبیحؔ</p>
+  </div>
+</header>
 
-      <h2>ادبی تعارف</h2>
-    <p>
-      اس حصے میں شاعر کا تفصیلی ادبی تعارف، ادبی سفر،
-      شاعری سے وابستگی اور خدمات شامل کی جا سکتی ہیں۔
-    </p>
-    </header>
+<section class="poem intro">
+  <h2>ادبی تعارف</h2>
+  <p>
+    ذبیحؔ، جن کا اصل نام عبداللہ راشد شیخ ہے، اردو شاعری سے
+    وابستہ ہیں۔ ان کے کلام میں احساسات، زندگی کے تجربات،
+    خود شناسی اور امید جیسے موضوعات نمایاں ہیں۔
+  </p>
+</section>
 
     <section class="poem" data-poem-id="ghazal-1">
       <h2>پہلی غزل</h2>
