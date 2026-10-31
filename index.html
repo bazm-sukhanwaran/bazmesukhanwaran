@@ -1,14 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="بزمِ سخنوران — اردو شاعری، غزل، نظم، اشعار اور شعراء کا تعارف">
-<meta name="theme-color" content="#073b35">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>بزمِ سخنوران | اردو ادب کا آن لائن دیوان</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
 :root {
   --green: #073b35;
   --green2: #0d5147;
@@ -17,7 +17,6 @@
   --ink: #173a36;
   --muted: #6b7772;
   --line: #e8e1d5;
-  --white: #fff;
 }
 
 * {
@@ -34,7 +33,6 @@ body {
   color: var(--ink);
   font-family: "Noto Nastaliq Urdu", serif;
   line-height: 2;
-  overflow-wrap: break-word;
 }
 
 a {
@@ -42,66 +40,50 @@ a {
   text-decoration: none;
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
+button {
+  font-family: inherit;
 }
 
-/* اوپر کا نیویگیشن بار */
+/* اوپر کا مینو */
+
 .topbar {
   background: #042b27;
-  color: #fff;
-  border-bottom: 1px solid #b88b4c;
+  color: white;
+  border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .nav {
   max-width: 1200px;
   margin: auto;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 10px 22px;
+  gap: 15px;
 }
 
 .brand {
+  color: #f2d39a;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #f2d39a;
-  white-space: nowrap;
-}
-
-.brand .feather {
-  font-size: 35px;
 }
 
 .brand strong {
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 25px;
 }
 
 .brand small {
   display: block;
   color: #e8dfce;
-  font-size: 10px;
+  font-size: 11px;
 }
 
-.navlinks {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-
-.navlinks a:hover {
-  color: var(--gold);
+.feather {
+  font-size: 35px;
 }
 
 .menu-toggle {
@@ -110,522 +92,260 @@ select {
   color: white;
   border: 1px solid #64847c;
   border-radius: 8px;
-  padding: 3px 10px;
+  padding: 4px 12px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-/* مرکزی ہیرو سیکشن */
-.hero {
-  background:
-    linear-gradient(100deg, rgba(2,31,27,.88), rgba(5,55,48,.72)),
-    radial-gradient(ellipse at 78% 30%, #83623e, transparent 40%),
-    linear-gradient(120deg, #241b15, #0c3d35);
-  color: white;
-  padding: 54px 20px 48px;
-  text-align: center;
-  border-bottom: 5px solid #e9dfcf;
-}
-
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
-}
-
-.hero .eyebrow {
-  color: #e8c88e;
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: 14px;
 }
 
+.navlinks a:hover {
+  color: var(--gold);
+}
+
+/* مرکزی تعارف */
+
+.hero {
+  background: linear-gradient(120deg, #042b27, #0d5147);
+  color: white;
+  padding: 45px 20px;
+  text-align: center;
+}
+
 .hero h1 {
-  font-size: clamp(36px, 6vw, 68px);
-  line-height: 1.5;
-  margin: 0;
   color: #f3d49b;
-  text-shadow: 0 3px 20px #000;
+  font-size: clamp(30px, 5vw, 55px);
+  margin: 0;
 }
 
 .hero p {
-  font-size: 18px;
-  margin: 8px 0 22px;
-  color: #f8f0e2;
+  font-size: 16px;
+  margin: 8px 0 18px;
 }
 
-/* تلاش */
 .search {
-  max-width: 660px;
-  margin: 20px auto 0;
+  max-width: 600px;
+  margin: auto;
   display: flex;
-  background: #fff;
-  border-radius: 40px;
+  background: white;
+  border-radius: 30px;
   overflow: hidden;
-  border: 3px solid #e5c98e;
-  box-shadow: 0 10px 30px #0003;
+  border: 2px solid var(--gold);
 }
 
 .search input {
-  border: 0;
-  outline: 0;
-  padding: 12px 20px;
   min-width: 0;
   flex: 1;
-  color: #173a36;
-  background: white;
+  border: 0;
+  outline: none;
+  padding: 10px 16px;
+  font-family: inherit;
 }
 
 .search button {
   border: 0;
+  padding: 8px 20px;
   background: var(--green2);
   color: white;
-  padding: 10px 24px;
   cursor: pointer;
 }
 
-.search button:hover,
-.btn:hover {
-  filter: brightness(1.1);
-}
+/* صفحے کا مرکزی حصہ */
 
-/* مرکزی مواد */
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: auto;
-  padding: 24px 20px;
+  padding: 25px 18px;
 }
 
-/* فوری لنکس */
-.quicklinks {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: -2px;
-}
-
-.quick {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  text-align: center;
-  padding: 12px 8px;
-  box-shadow: 0 3px 10px #102b2510;
-  transition: .2s;
-}
-
-.quick:hover {
-  transform: translateY(-3px);
-  border-color: var(--gold);
-}
-
-.quick .icon {
-  display: block;
-  font-size: 25px;
-  color: var(--green2);
-}
-
-.quick span:last-child {
-  font-size: 14px;
-}
-
-/* سیکشن عنوان */
 .section-head {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin: 0 0 14px;
+  align-items: center;
   border-bottom: 2px solid var(--line);
-  padding-bottom: 7px;
+  margin-bottom: 20px;
 }
 
 .section-head h2 {
-  font-size: 23px;
-  margin: 0;
+  font-size: 24px;
 }
 
-.section-head a {
-  color: var(--green2);
-  font-size: 13px;
-}
+/* شعرا کے پروفائل */
 
-/* مرکزی تین کالم لے آؤٹ */
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 2.2fr 1fr;
-  gap: 18px;
-  align-items: start;
-}
-
-.panel {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 15px #0a342b08;
-}
-
-.panel-title {
-  font-size: 18px;
-  margin: 0 0 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line);
-}
-
-.poet-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.poet-list li {
-  border-bottom: 1px solid #f0ece5;
-  padding: 6px 0;
-}
-
-.poet-list a {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.poet-list a:hover {
-  color: #a97832;
-}
-
-.badge {
-  font: 12px "Noto Sans Arabic", sans-serif;
-  color: var(--green2);
-  background: #e8f2ee;
-  border-radius: 20px;
-  padding: 2px 8px;
-  align-self: center;
-}
-
-/* شاعر پروفائل: کمپیوٹر پر 3 کارڈز */
 .poet-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 18px;
+  width: 100%;
   align-items: stretch;
 }
 
 .poet-card {
   min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 14px;
   overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
   text-align: center;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  transition: transform .2s, box-shadow .2s;
-}
-
-.poet-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 20px #0a342b12;
+  box-shadow: 0 4px 15px #102b2510;
 }
 
 .poet-avatar {
   width: 100%;
-  height: 190px;
+  height: 230px;
   overflow: hidden;
-  background: #eef4f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #edf3ef;
 }
 
 .poet-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
   display: block;
 }
 
-.poet-card h3 {
-  font-size: 17px;
-  line-height: 1.9;
-  margin: 10px 5px 0;
+.poet-info {
+  padding: 12px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
-.poet-card p {
-  font-size: 12px;
+.poet-info h3 {
+  font-size: 22px;
+  margin: 0 0 3px;
+}
+
+.poet-info p {
   color: var(--muted);
-  margin: 2px 6px 10px;
+  font-size: 13px;
+  margin: 0 0 8px;
 }
 
-.poet-card .btn {
-  align-self: center;
-  margin-top: auto;
-  margin-bottom: 12px;
-}
-
-/* بٹن */
 .btn {
   display: inline-block;
-  border: 0;
   background: var(--green2);
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 13px;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 5px 16px;
+  font-size: 14px;
   cursor: pointer;
+  margin-top: auto;
+}
+
+.btn:hover {
+  background: var(--green);
 }
 
 /* شاعری کے کارڈ */
+
 .poetry-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
 .poetry-card {
-  min-width: 0;
+  background: white;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: linear-gradient(180deg, #fff, #fcfaf5);
-  padding: 14px;
-  position: relative;
-}
-
-.poetry-card .type {
-  font-size: 12px;
-  color: #a97832;
+  padding: 15px;
 }
 
 .poetry-card h3 {
-  font-size: 18px;
-  margin: 4px 0;
+  font-size: 19px;
+  margin: 5px 0;
 }
 
-.poetry-card .couplet {
+.poetry-card p {
   white-space: pre-line;
-  font-size: 15px;
-  line-height: 2.2;
-  margin: 8px 0 12px;
+  line-height: 2.3;
 }
 
-.poetry-card .meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 11px;
-  border-top: 1px solid var(--line);
-  padding-top: 7px;
+.poetry-card .type {
+  color: #a97832;
+  font-size: 13px;
 }
 
-/* کلام جمع کرانے کا باکس */
-.submit-box {
-  background: linear-gradient(145deg, #073b35, #0e5147);
-  color: #fff;
+/* دیگر حصے */
+
+.panel {
+  background: white;
+  border: 1px solid var(--line);
   border-radius: 14px;
   padding: 18px;
-  margin-bottom: 18px;
+  margin: 20px 0;
+}
+
+.submit-box {
+  background: var(--green);
+  color: white;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 25px;
 }
 
 .submit-box h3 {
   color: #f0ce8d;
-  margin: 0;
-  font-size: 21px;
-}
-
-.submit-box p {
-  font-size: 13px;
-  line-height: 2;
+  margin-top: 0;
 }
 
 .submit-box a {
   display: inline-block;
-  border: 1px solid #e6c887;
+  border: 1px solid var(--gold);
   border-radius: 8px;
-  padding: 3px 14px;
+  padding: 4px 14px;
   color: #f7dba7;
 }
 
-/* اصناف */
-.category-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.category-list button {
-  background: #fbf8f2;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 5px 12px;
-  cursor: pointer;
-  color: var(--ink);
-  font-size: 13px;
-}
-
-.category-list button.active,
-.category-list button:hover {
-  background: var(--green2);
-  color: white;
-}
-
-.empty {
-  display: none;
-  text-align: center;
-  padding: 24px;
-  color: var(--muted);
-}
-
-/* فٹر */
 footer {
   background: #042b27;
   color: #e9e0d1;
-  margin-top: 28px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 24px 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.footer-inner strong {
-  color: #f0ce8d;
-  font-size: 22px;
-}
-
-.footer-inner small {
-  display: block;
-  color: #c3cfc9;
-}
-
-.copyright {
-  border-top: 1px solid #31564f;
   text-align: center;
-  padding: 9px;
-  font-size: 12px;
-  color: #c7d2cc;
-}
-
-/* فارم پاپ اپ */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #001d19b8;
-  z-index: 20;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal.open {
-  display: flex;
-}
-
-.modal-card {
-  max-width: 560px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: auto;
-  background: #fffaf2;
-  border-radius: 16px;
   padding: 22px;
-  position: relative;
+  margin-top: 30px;
 }
 
-.close {
-  position: absolute;
-  left: 15px;
-  top: 8px;
-  border: 0;
-  background: transparent;
-  font-size: 28px;
-  cursor: pointer;
-  color: var(--green);
-}
+/* ٹیبلٹ */
 
-.modal-card h2 {
-  margin-top: 0;
-}
-
-.form-row {
-  margin: 10px 0;
-}
-
-.form-row label {
-  display: block;
-  font-size: 14px;
-}
-
-.form-row input,
-.form-row textarea,
-.form-row select {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 9px;
-  background: #fff;
-}
-
-.notice {
-  font-family: "Noto Sans Arabic", sans-serif;
-  font-size: 12px;
-  color: #596963;
-  line-height: 1.8;
-  background: #f0f5f1;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-/* درمیانی اسکرین */
-@media (max-width: 950px) {
-  .layout {
-    grid-template-columns: 1fr 2fr;
-  }
-
-  .layout aside:last-child {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .quicklinks {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  /* ٹیبلٹ پر بھی تین شاعر */
+@media (max-width: 900px) {
   .poet-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .poet-avatar {
-    height: 160px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .poetry-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .poet-avatar {
+    height: 210px;
+  }
 }
 
 /* موبائل */
-@media (max-width: 650px) {
+
+@media (max-width: 600px) {
   .nav {
-    padding: 8px 14px;
     flex-wrap: wrap;
+    padding: 8px 14px;
   }
 
   .brand strong {
     font-size: 19px;
   }
 
-  .brand .feather {
-    font-size: 28px;
+  .feather {
+    font-size: 27px;
   }
 
   .menu-toggle {
@@ -635,8 +355,10 @@ footer {
   .navlinks {
     display: none;
     width: 100%;
-    padding: 8px 0;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 0;
   }
 
   .navlinks.show {
@@ -644,40 +366,17 @@ footer {
   }
 
   .hero {
-    padding: 35px 15px;
+    padding: 30px 12px;
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .container {
-    padding: 18px 13px;
+    padding: 18px 12px;
   }
 
-  .quicklinks {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-  }
-
-  .quick {
-    padding: 8px 4px;
-  }
-
-  .quick span:last-child {
-    font-size: 12px;
-  }
-
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .layout aside:last-child {
-    grid-column: auto;
-    display: block;
-  }
-
-  /* موبائل پر دو شاعر ایک قطار میں */
   .poet-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -687,447 +386,187 @@ footer {
     height: 145px;
   }
 
-  .poet-card h3 {
-    font-size: 15px;
+  .poet-info {
+    padding: 8px 5px 12px;
   }
 
-  .poet-card p {
+  .poet-info h3 {
+    font-size: 17px;
+  }
+
+  .poet-info p {
     font-size: 11px;
   }
 
-  .poet-card .btn {
+  .btn {
     font-size: 12px;
-    padding: 5px 10px;
+    padding: 4px 10px;
   }
 
   .poetry-grid {
     grid-template-columns: 1fr;
   }
-
-  .section-head h2 {
-    font-size: 20px;
-  }
-
-  .footer-inner {
-    display: block;
-    text-align: center;
-  }
-
-  .footer-inner div {
-    margin: 8px 0;
-  }
 }
 
-/* بہت چھوٹی اسکرین */
-@media (max-width: 360px) {
-  .poet-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .poet-avatar {
-    height: 210px;
-  }
-
-  .search button {
-    padding: 8px 12px;
-  }
-/* شاعرین کے پروفائلز کی درست ترتیب */
-.poet-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 16px;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  direction: rtl;
-}
-
-.poet-card {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  text-align: center;
-  overflow: hidden;
-}
-
-.poet-avatar {
-  width: 100%;
-  height: 190px;
-  overflow: hidden;
-}
-
-.poet-avatar img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* درمیانی اسکرین */
-@media (max-width: 900px) {
-  .poet-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 10px;
-  }
-
-  .poet-avatar {
-    height: 140px;
-  }
-}
-
-/* موبائل */
-@media (max-width: 600px) {
-  .poet-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px;
-  }
-
-  .poet-avatar {
-    height: 125px;
-  }
-
-  .poet-card h3 {
-    font-size: 14px;
-  }
-
-  .poet-card p {
-    font-size: 10px;
-  }
-
-  .poet-card .btn {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
-}
 </style>
 </head>
+
 <body>
+
 <header class="topbar">
   <nav class="nav">
-    <a class="brand" href="#home" aria-label="بزم سخنوران ہوم">
-      <span class="feather">🪶</span><span><strong>بزمِ سخنوران</strong><small>اردو ادب کا آن لائن دیوان</small></span>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="مینو کھولیں">
+      ☰
+    </button>
+
+    <a class="brand" href="index.html">
+      <span class="feather">🪶</span>
+      <span>
+        <strong>بزمِ سخنوران</strong>
+        <small>اردو ادب کا آن لائن دیوان</small>
+      </span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="مینو کھولیں">☰</button>
+
     <div class="navlinks" id="navlinks">
-      <a href="#home">ہوم</a><a href="#poets">شعراء</a><a href="#ghazals">غزلیں</a><a href="#poetry">اشعار</a><a href="#categories">اصناف</a><a href="#submit">کلام بھیجیں</a><a href="#about">تعارف</a>
+      <a href="index.html">صفحۂ اول</a>
+      <a href="#poets">شعرا</a>
+      <a href="#poetry">کلام</a>
+      <a href="#submit">کلام بھیجیں</a>
     </div>
+
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div class="eyebrow">خوش آمدید — اہلِ ذوق کی ادبی محفل</div>
-    <h1>بزمِ سخنوران 🪶</h1>
-    <p>اردو شاعری، غزل، نظم اور اہلِ قلم کا آن لائن دیوان</p>
-    <div class="search" role="search">
-      <input id="searchInput" type="search" placeholder="شاعر، غزل، شعر یا صنف تلاش کریں..." aria-label="شاعری تلاش کریں">
-      <button id="searchBtn">تلاش کریں⌕</button>
-    </div>
+<section class="hero">
+  <div class="container">
+    <h1>بزمِ سخنوران</h1>
+    <p>اردو شاعری اور ادب کا خوبصورت آن لائن دیوان</p>
+
+    <form class="search" onsubmit="return false;">
+      <input id="searchInput" type="search" placeholder="شاعر یا کلام تلاش کریں">
+      <button type="button" onclick="searchPoets()">تلاش</button>
+    </form>
   </div>
 </section>
 
 <main class="container">
-  <section class="quicklinks" id="categories" aria-label="شاعری کی اصناف">
-    <a class="quick" href="#latest" data-filter="تازہ ترین"><span class="icon">📖</span><span>تازہ ترین</span></a>
-    <a class="quick" href="#ghazals" data-filter="غزل"><span class="icon">🪶</span><span>غزلیں</span></a>
-    <a class="quick" href="#poetry" data-filter="نظم"><span class="icon">📚</span><span>نظمیں</span></a>
-    <a class="quick" href="#poetry" data-filter="اشعار"><span class="icon">❖</span><span>اشعار</span></a>
-    <a class="quick" href="#poets"><span class="icon">👤</span><span>شعراء</span></a>
-    <a class="quick" href="#submit"><span class="icon">✒️</span><span>کلام بھیجیں</span></a>
-  </section>
 
-  <div class="layout" style="margin-top:20px">
-    <aside>
-      <section class="panel">
-        <h2 class="panel-title">شعراء کی فہرست 🪶</h2>
-        <ul class="poet-list" id="poetList">
-          <li><a href="#poets" data-search="مرزا غالب"><span>مرزا غالب</span><span class="badge">غزل</span></a></li>
-          <li><a href="#poets" data-search="علامہ اقبال"><span>علامہ اقبال</span><span class="badge">فکر</span></a></li>
-          <li><a href="#poets" data-search="فیض احمد فیض"><span>فیض احمد فیض</span><span class="badge">نظم</span></a></li>
-          <li><a href="#poets" data-search="پروین شاکر"><span>پروین شاکر</span><span class="badge">غزل</span></a></li>
-          <li><a href="#poets" data-search="احمد فراز"><span>احمد فراز</span><span class="badge">غزل</span></a></li>
-          <li><a href="#poets" data-search="ذبیح عبداللہ راشد شیخ"><span>ذبیحؔ — عبداللہ راشد شیخ</span><span class="badge">نئے شاعر</span></a></li>
-        </ul>
-      </section>
-      <section class="panel">
-        <h2 class="panel-title">تلاشِ سخن</h2>
-        <p style="font-size:13px;margin:0 0 8px">کسی شاعر یا کلام کا نام لکھ کر تلاش کریں۔</p>
-        <input id="sideSearch" type="search" placeholder="مثلاً: ذبیحؔ" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px">
-        <button class="btn" id="sideSearchBtn" style="width:100%;margin-top:8px">تلاش کریں</button>
-      </section>
-    </aside>
-
-    <div>
-  <section class="panel" id="poets">
-
+  <section id="poets">
     <div class="section-head">
-      <h2>معروف شعراء</h2>
-      <a href="#poets">تمام شعراء ←</a>
+      <h2>منتخب شعرا</h2>
     </div>
 
-    <div class="poet-grid" id="poetCards">
-      <!-- مرزا غالب -->
-      <article class="poet-card searchable"
-        data-keywords="ذبیح عبداللہ راشد شیخ بیجاپور وجئے پورہ شاعر">
+    <div class="poet-grid" id="poetGrid">
 
+      <article class="poet-card">
         <div class="poet-avatar">
-  <img src="images/galib.jpg" alt="غالیب">
+          <img src="images/ghalib.jpg" alt="مرزا غالب">
         </div>
-        <h3>امرزا غالب</h3>
-        <p>مرزا اسد اللہ خان</p>
-        <p>دہلی</p>
+        <div class="poet-info">
+          <h3>مرزا غالب</h3>
+          <p>مرزا اسد اللہ خان غالب</p>
+          <p>دہلی</p>
+          <a class="btn" href="ghalib.html">کلام پڑھیے</a>
+        </div>
+      </article>
 
-        <a class="btn" href="galib.html">
-          کلام پڑھیے
-        </a>
+      <article class="poet-card">
+        <div class="poet-avatar">
+          <img src="images/iqbal.jpg" alt="علامہ اقبال">
+        </div>
+        <div class="poet-info">
+          <h3>اقبال</h3>
+          <p>علامہ محمد اقبال</p>
+          <p>سیالکوٹ، پاکستان</p>
+          <a class="btn" href="iqbal.html">کلام پڑھیے</a>
+        </div>
+      </article>
+
+      <article class="poet-card">
+        <div class="poet-avatar">
+          <img src="images/faiz.jpg" alt="فیض احمد فیض">
+        </div>
+        <div class="poet-info">
+          <h3>فیض احمد فیض</h3>
+          <p>1911 — 1984</p>
+          <p>اردو شاعر</p>
+          <a class="btn" href="faiz.html">تعارف اور کلام</a>
+        </div>
+      </article>
+
+      <article class="poet-card">
+        <div class="poet-avatar">
+          <img src="images/zabih.jpg" alt="ذبیح">
+        </div>
+        <div class="poet-info">
+          <h3>ذبیحؔ</h3>
+          <p>عبداللہ راشد شیخ</p>
+          <p>وجے پورہ، کرناٹک</p>
+          <a class="btn" href="poetry.html">کلام پڑھیے</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="poetry" style="margin-top:35px">
+    <div class="section-head">
+      <h2>منتخب کلام</h2>
+    </div>
+
+    <div class="poetry-grid">
+      <article class="poetry-card">
+        <span class="type">غزل</span>
+        <h3>پہلی غزل</h3>
+        <p>ہم نے ہنس کر اسے گزارا ہے
+تیرا غم بھی تو اک سہارا ہے</p>
+        <a href="poetry.html" class="btn">مکمل غزل پڑھیے</a>
+      </article>
+
+      <article class="poetry-card">
+        <span class="type">تخلیق</span>
+        <h3>دوسری تخلیق</h3>
+        <p>یہاں اپنی پسندیدہ شاعری شامل کریں۔</p>
+        <a href="poetry.html" class="btn">مزید پڑھیے</a>
       </article>
     </div>
   </section>
 
-     <div class="poet-grid" id="poetCards">
-      <!-- علامہ اقبال -->
-       <article class="poet-card searchable"
-        data-keywords="ذبیح عبداللہ راشد شیخ بیجاپور وجئے پورہ شاعر">
-
-        <div class="poet-avatar">
-  <img src="images/alamaiqbal.jpg" alt="اقبال">
-        </div>
-        <h3>اقبال</h3>
-        <p>علامہ محمد اقبال</p>
-        <p>وجئے پورہ، کرناٹک، بھارت</p>
-
-        <a class="btn" href="alama.html">
-          کلام پڑھیے
-        </a>
-      </article>
-    </div>
+  <section class="submit-box" id="submit">
+    <h3>اپنا کلام بزم میں شامل کروائیں</h3>
+    <p>اپنی غزل، نظم یا دوسری ادبی تخلیق ہمیں بھیجیے۔</p>
+    <a href="submit.html">کلام بھیجنے کے لیے یہاں کلک کریں</a>
   </section>
-</div>
 
- <div class="poet-grid" id="poetCards">
-      <!-- فیض احمد فیض -->
-      <article class="poet-card searchable"
-        data-keywords="فیض احمد فیض فیض نظم غزل">
-
-        <div class="poet-avatar">🖋</div>
-        <h3>فیض احمد فیض</h3>
-        <p>1911 — 1984</p>
-
-        <button class="btn poet-info"
-          data-name="فیض احمد فیض"
-          data-bio="فیض احمد فیض جدید اردو شاعری کے نمایاں شاعر تھے۔">
-          تعارف اور کلام
-        </button>
-      </article>
-
-    <div class="poet-grid" id="poetCards">
-      <!-- عبداللہ راشد شیخ، تخلص ذبیحؔ -->
-      <article class="poet-card searchable"
-        data-keywords="ذبیح عبداللہ راشد شیخ بیجاپور وجئے پورہ شاعر">
-
-        <div class="poet-avatar">
-  <img src="images/zabih.jpg" alt="ذبیح">
-        </div>
-        <h3>ذبیحؔ</h3>
-        <p>عبداللہ راشد شیخ</p>
-        <p>وجئے پورہ، کرناٹک، بھارت</p>
-
-        <a class="btn" href="poetry.html">
-          کلام پڑھیے
-        </a>
-      </article>
-    </div>
-  </section>
-</div>
-
-      <section class="panel" id="latest">
-        <div class="section-head"><h2>تازہ ترین کلام</h2><a href="#poetry">مزید کلام ←</a></div>
-        <div class="poetry-grid" id="poetry">
-          <article class="poetry-card searchable" data-keywords="نمونہ غزل محبت اردو غزل">
-            <span class="type">نمونہ غزل</span><h3>لفظوں کی روشنی</h3>
-            <div class="couplet">دل میں امید کا اک دیپ جلاتے رہیے
-رات کتنی بھی ہو، اشعار سناتے رہیے</div>
-            <div class="meta"><span>نمونہ کلام</span><span>غزل</span></div>
-          </article>
-          <article class="poetry-card searchable" data-keywords="نمونہ نظم زندگی امید نظم">
-            <span class="type">نمونہ نظم</span><h3>نئی صبح</h3>
-            <div class="couplet">ہر اک قدم پہ نیا حوصلہ جگاتے چلیں
-چراغِ علم سے دنیا کو ہم سجاتے چلیں</div>
-            <div class="meta"><span>نمونہ کلام</span><span>نظم</span></div>
-          </article>
-          <article class="poetry-card searchable" data-keywords="ذبیح عبداللہ راشد شیخ تعارف شاعر">
-            <span class="type">شاعر کا تعارف</span><h3>ذبیحؔ</h3>
-            <div class="couplet">عبداللہ راشد شیخ
-اردو شاعر — وجئے پورہ، کرناٹک</div>
-            <div class="meta"><span>شاعر پروفائل</span><span>تعارف</span></div>
-          </article>
-        </div>
-        <div class="empty" id="emptyState">آپ کی تلاش سے متعلق کوئی نتیجہ نہیں ملا۔ دوسرے الفاظ آزما کر دیکھیں۔</div>
-      </section>
-
-      <section class="panel" id="ghazals">
-        <div class="section-head"><h2>ادبی اصناف</h2><a href="#categories">تمام اصناف ←</a></div>
-        <div class="category-list">
-          <button class="filter-btn active" data-category="all">تمام</button>
-          <button class="filter-btn" data-category="غزل">غزل</button>
-          <button class="filter-btn" data-category="نظم">نظم</button>
-          <button class="filter-btn" data-category="اشعار">اشعار</button>
-          <button class="filter-btn" data-category="حمد">حمد</button>
-          <button class="filter-btn" data-category="نعت">نعت</button>
-          <button class="filter-btn" data-category="مضامین">مضامین</button>
-          <button class="filter-btn" data-category="تصویری شاعری">تصویری شاعری</button>
-        </div>
-        <p style="font-size:13px;color:var(--muted);margin-bottom:0">یہ نمونہ ویب سائٹ ہے۔ آپ اپنی اصل غزلیں، نظمیں اور شعراء کے صفحات بعد میں شامل کر سکتے ہیں۔</p>
-      </section>
-    </div>
-
-    <aside>
-      <section class="submit-box" id="submit">
-        <h3>اپنا کلام بھیجیں ✒️</h3>
-        <p>اگر آپ شاعر ہیں اور اپنی غزل یا نظم بزمِ سخنوران میں شامل کروانا چاہتے ہیں تو اپنی تفصیل تیار رکھیں۔</p>
-        <a href="#submissionForm" id="openSubmission">کلام جمع کروائیں ←</a>
-      </section>
-      <section class="panel">
-        <h2 class="panel-title">ادبی زمرے</h2>
-        <ul class="poet-list">
-          <li><a href="#ghazals"><span>غزل</span><span>←</span></a></li>
-          <li><a href="#ghazals"><span>نظم</span><span>←</span></a></li>
-          <li><a href="#ghazals"><span>اشعار</span><span>←</span></a></li>
-          <li><a href="#ghazals"><span>حمد و نعت</span><span>←</span></a></li>
-          <li><a href="#ghazals"><span>مضامین</span><span>←</span></a></li>
-          <li><a href="#ghazals"><span>تصویری شاعری</span><span>←</span></a></li>
-        </ul>
-      </section>
-      <section class="panel" id="about">
-        <h2 class="panel-title">بزمِ سخنوران کے بارے میں</h2>
-        <p style="font-size:13px;margin:0">بزمِ سخنوران اردو شاعری اور ادب سے محبت کرنے والوں کے لیے ایک آن لائن ادبی محفل کا ابتدائی نمونہ ہے۔ اس کا مقصد شعراء اور ان کے کلام کو ایک جگہ پیش کرنا ہے۔</p>
-      </section>
-    </aside>
-  </div>
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <div><strong>بزمِ سخنوران 🪶</strong><small>اردو ادب کا آن لائن دیوان</small></div>
-    <div>شاعری • ادب • خیال • اظہار</div>
-    <div><a href="#home">اوپر جائیں ↑</a></div>
-  </div>
-  <div class="copyright">© 2026 بزمِ سخنوران — ادبی نمونہ ویب سائٹ</div>
+  <strong>بزمِ سخنوران</strong>
+  <p>اردو ادب کی خدمت کے لیے ایک ادبی کاوش</p>
+  <small>© بزمِ سخنوران</small>
 </footer>
 
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-card">
-    <button class="close" id="closeModal" aria-label="بند کریں">×</button>
-    <h2 id="modalTitle">شاعر کا تعارف</h2>
-    <p id="modalText"></p>
-    <p class="notice">یہ ابتدائی نمونہ ہے۔ مزید معلومات اور اصل کلام آپ ایڈٹ کرکے شامل کر سکتے ہیں۔</p>
-  </div>
-</div>
-
-<div class="modal" id="submissionModal" role="dialog" aria-modal="true" aria-labelledby="submissionTitle">
-  <div class="modal-card">
-    <button class="close" id="closeSubmission" aria-label="بند کریں">×</button>
-    <h2 id="submissionTitle">اپنا کلام بھیجیں</h2>
-    <form id="submissionForm">
-      <div class="form-row"><label for="authorName">آپ کا نام</label><input id="authorName" required placeholder="پورا نام یا تخلص"></div>
-      <div class="form-row"><label for="workTitle">کلام کا عنوان</label><input id="workTitle" required placeholder="غزل یا نظم کا عنوان"></div>
-      <div class="form-row"><label for="workType">صنف</label><select id="workType"><option>غزل</option><option>نظم</option><option>اشعار</option><option>حمد</option><option>نعت</option><option>مضمون</option></select></div>
-      <div class="form-row"><label for="workText">اپنا کلام</label><textarea id="workText" rows="6" required placeholder="یہاں اپنا کلام لکھیں"></textarea></div>
-      <button class="btn" type="submit">ای میل کے ذریعے تیار کریں</button>
-    </form>
-    <p id="submissionStatus" class="notice" role="status" aria-live="polite"></p>
-    <p class="notice">اہم: یہ فارم خودکار طور پر ویب سائٹ پر کلام شائع نہیں کرتا۔ یہ آپ کے ای میل پروگرام میں پیغام تیار کرتا ہے۔ براہِ راست جمع کروانے اور ایڈمن پینل کے لیے الگ بیک اینڈ درکار ہوگا۔</p>
-  </div>
-</div>
-
 <script>
-const menuToggle=document.getElementById('menuToggle');
-menuToggle.addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('show'));
+const menuToggle = document.getElementById("menuToggle");
+const navlinks = document.getElementById("navlinks");
 
-const modal=document.getElementById('modal');
-document.querySelectorAll('.poet-info').forEach(btn=>btn.addEventListener('click',()=>{
-  document.getElementById('modalTitle').textContent=btn.dataset.name;
-  document.getElementById('modalText').textContent=btn.dataset.bio;
-  modal.classList.add('open');
-}));
-document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
-modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-
-const submissionModal=document.getElementById('submissionModal');
-document.getElementById('openSubmission').addEventListener('click',e=>{e.preventDefault();submissionModal.classList.add('open')});
-document.getElementById('closeSubmission').addEventListener('click',()=>submissionModal.classList.remove('open'));
-submissionModal.addEventListener('click',e=>{if(e.target===submissionModal)submissionModal.classList.remove('open')});
-document.getElementById('submissionForm').addEventListener('submit', async (e) => {
-e.preventDefault();
-
-const name = document.getElementById('authorName').value.trim();
-const title = document.getElementById('workTitle').value.trim();
-const type = document.getElementById('workType').value;
-const work = document.getElementById('workText').value.trim();
-
-const status = document.getElementById('submissionStatus');
-const button = e.target.querySelector('button[type="submit"]');
-
-status.textContent = 'کلام بھیجا جا رہا ہے، براہِ کرم انتظار کریں۔۔۔';
-button.disabled = true;
-
-try {
-await emailjs.send('service_mxle3t5', 'template_r8ysjzl', {
-from_name: name,
-from_email: 'website@bazmesukhanwaran.com',
-poem_title: title,
-poem_type: type,
-poem_content: work
+menuToggle.addEventListener("click", function() {
+  navlinks.classList.toggle("show");
 });
 
-status.textContent = 'الحمدللہ! آپ کا کلام کامیابی سے بھیج دیا گیا ہے۔';
-e.target.reset();
+function searchPoets() {
+  const query = document.getElementById("searchInput").value.trim();
+  const cards = document.querySelectorAll(".poet-card");
 
-} catch (error) {
-console.error('EmailJS error:', error);
-status.textContent = 'معذرت! کلام نہیں بھیجا جا سکا۔ براہِ کرم دوبارہ کوشش کریں۔';
-} finally {
-button.disabled = false;
-}
-});
-
-let currentCategory='all';
-function searchSite(query){
-  query=(query||'').trim().toLocaleLowerCase();
-  let visible=0;
-  document.querySelectorAll('.searchable').forEach(card=>{
-    const text=(card.innerText+' '+(card.dataset.keywords||'')).toLocaleLowerCase();
-    const catMatch=currentCategory==='all'||text.includes(currentCategory.toLocaleLowerCase());
-    const match=(!query||text.includes(query))&&catMatch;
-    card.style.display=match?'':'none';
-    if(match)visible++;
+  cards.forEach(function(card) {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query.toLowerCase()) ? "flex" : "none";
   });
-  document.getElementById('emptyState').style.display=visible?'none':'block';
 }
-document.getElementById('searchBtn').addEventListener('click',()=>searchSite(document.getElementById('searchInput').value));
-document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')searchSite(e.target.value)});
-document.getElementById('sideSearchBtn').addEventListener('click',()=>{
-  const q=document.getElementById('sideSearch').value;
-  document.getElementById('searchInput').value=q;searchSite(q);
-  document.getElementById('latest').scrollIntoView({behavior:'smooth'});
-});
-document.getElementById('sideSearch').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('sideSearchBtn').click()});
-document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');currentCategory=btn.dataset.category;
-  searchSite(document.getElementById('searchInput').value);
-}));
-document.querySelectorAll('[data-filter]').forEach(link=>link.addEventListener('click',()=>{
-  const filter=link.dataset.filter;
-  if(['غزل','نظم','اشعار'].includes(filter)){currentCategory=filter;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.category===filter));searchSite('');}
-}));
+
+document.getElementById("searchInput").addEventListener("input", searchPoets);
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><script>
-  emailjs.init({
-    publicKey: 'nk7iKxtBlcROLdil3'
-  });
-</script>
-  
+
 </body>
 </html>
