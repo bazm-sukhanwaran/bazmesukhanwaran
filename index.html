@@ -19,13 +19,9 @@
   --line: #e8e1d5;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -35,14 +31,8 @@ body {
   line-height: 2;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
 
 /* اوپر کا مینو */
 
@@ -72,9 +62,7 @@ button {
   gap: 10px;
 }
 
-.brand strong {
-  font-size: 25px;
-}
+.brand strong { font-size: 25px; }
 
 .brand small {
   display: block;
@@ -82,9 +70,7 @@ button {
   font-size: 11px;
 }
 
-.feather {
-  font-size: 35px;
-}
+.feather { font-size: 35px; }
 
 .menu-toggle {
   display: none;
@@ -104,9 +90,7 @@ button {
   font-size: 14px;
 }
 
-.navlinks a:hover {
-  color: var(--gold);
-}
+.navlinks a:hover { color: var(--gold); }
 
 /* مرکزی تعارف */
 
@@ -155,7 +139,7 @@ button {
   cursor: pointer;
 }
 
-/* صفحے کا مرکزی حصہ */
+/* مرکزی حصہ */
 
 .container {
   max-width: 1200px;
@@ -172,9 +156,7 @@ button {
   margin-bottom: 20px;
 }
 
-.section-head h2 {
-  font-size: 24px;
-}
+.section-head h2 { font-size: 24px; }
 
 /* شعرا کے پروفائل */
 
@@ -243,9 +225,7 @@ button {
   margin-top: auto;
 }
 
-.btn:hover {
-  background: var(--green);
-}
+.btn:hover { background: var(--green); }
 
 /* شاعری کے کارڈ */
 
@@ -277,15 +257,7 @@ button {
   font-size: 13px;
 }
 
-/* دیگر حصے */
-
-.panel {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px;
-  margin: 20px 0;
-}
+/* کلام بھیجنے کا حصہ */
 
 .submit-box {
   background: var(--green);
@@ -300,13 +272,159 @@ button {
   margin-top: 0;
 }
 
-.submit-box a {
+.open-takhleeq {
   display: inline-block;
   border: 1px solid var(--gold);
   border-radius: 8px;
-  padding: 4px 14px;
+  padding: 7px 16px;
   color: #f7dba7;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
 }
+
+.open-takhleeq:hover {
+  background: var(--gold);
+  color: #042b27;
+}
+
+/* تخلیق فارم پاپ اَپ */
+
+.takhleeq-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(7px);
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.takhleeq-box {
+  background: #fff;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  color: #650000;
+}
+
+.takhleeq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.takhleeq-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.takhleeq-header button {
+  font-size: 25px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #888;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+}
+
+.takhleeq-content {
+  padding: 30px 35px;
+}
+
+.takhleeq-content label {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.takhleeq-content input,
+.takhleeq-content textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #e8e8e8;
+  background: #fafafa;
+  border-radius: 13px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 17px;
+  margin-bottom: 22px;
+}
+
+.takhleeq-content textarea {
+  min-height: 220px;
+  resize: vertical;
+  text-align: right;
+  direction: rtl;
+}
+
+.language-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.language-buttons button {
+  border: 1px solid #ddd;
+  background: white;
+  color: #777;
+  border-radius: 25px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.language-buttons button.active {
+  background: #650000;
+  color: white;
+}
+
+.takhleeq-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.takhleeq-actions button {
+  flex: 1;
+  min-height: 85px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.save-diary { background: #2e5d78; }
+
+.send-approval {
+  background: #650000;
+  border-radius: 35px !important;
+}
+
+.takhleeq-note {
+  text-align: center;
+  color: #999;
+  line-height: 1.8;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* فٹر */
 
 footer {
   background: #042b27;
@@ -319,17 +437,12 @@ footer {
 /* ٹیبلٹ */
 
 @media (max-width: 900px) {
-  .poet-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .poet-grid,
   .poetry-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .poet-avatar {
-    height: 210px;
-  }
+  .poet-avatar { height: 210px; }
 }
 
 /* موبائل */
@@ -340,17 +453,10 @@ footer {
     padding: 8px 14px;
   }
 
-  .brand strong {
-    font-size: 19px;
-  }
+  .brand strong { font-size: 19px; }
+  .feather { font-size: 27px; }
 
-  .feather {
-    font-size: 27px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   .navlinks {
     display: none;
@@ -361,53 +467,39 @@ footer {
     padding: 10px 0;
   }
 
-  .navlinks.show {
-    display: flex;
-  }
+  .navlinks.show { display: flex; }
 
-  .hero {
-    padding: 30px 12px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 18px 12px;
-  }
+  .hero { padding: 30px 12px; }
+  .hero p { font-size: 14px; }
+  .container { padding: 18px 12px; }
 
   .poet-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
-  .poet-avatar {
-    height: 145px;
-  }
+  .poet-avatar { height: 145px; }
 
-  .poet-info {
-    padding: 8px 5px 12px;
-  }
-
-  .poet-info h3 {
-    font-size: 17px;
-  }
-
-  .poet-info p {
-    font-size: 11px;
-  }
+  .poet-info { padding: 8px 5px 12px; }
+  .poet-info h3 { font-size: 17px; }
+  .poet-info p { font-size: 11px; }
 
   .btn {
     font-size: 12px;
     padding: 4px 10px;
   }
 
-  .poetry-grid {
-    grid-template-columns: 1fr;
+  .poetry-grid { grid-template-columns: 1fr; }
+
+  .takhleeq-content { padding: 22px 16px; }
+  .takhleeq-header { padding: 15px 18px; }
+  .takhleeq-content textarea { min-height: 190px; }
+
+  .takhleeq-actions button {
+    font-size: 14px;
+    min-height: 75px;
   }
 }
-
 </style>
 </head>
 
@@ -536,11 +628,10 @@ footer {
   <section class="submit-box" id="submit">
     <h3>اپنا کلام بزم میں شامل کروائیں</h3>
     <p>اپنی غزل، نظم یا دوسری ادبی تخلیق ہمیں بھیجیے۔</p>
-   <a href="https://wa.me/917975078705?text=السلام%20علیکم،%20میں%20بزمِ%20سخنوران%20کے%20لیے%20اپنا%20کلام%20بھیجنا%20چاہتا%20ہوں۔"
-   target="_blank"
-   rel="noopener">
-  کلام بھیجنے کے لیے یہاں کلک کریں
-</a>
+
+    <button type="button" class="open-takhleeq" onclick="openTakhleeq()">
+      کلام بھیجنے کے لیے یہاں کلک کریں
+    </button>
   </section>
 
 </main>
@@ -551,7 +642,55 @@ footer {
   <small>© بزمِ سخنوران</small>
 </footer>
 
+<!-- تخلیق فارم -->
+
+<div id="takhleeqModal" class="takhleeq-overlay" onclick="overlayClose(event)">
+  <div class="takhleeq-box">
+
+    <div class="takhleeq-header">
+      <h2>تخلیق ✍️</h2>
+      <button type="button" onclick="closeTakhleeq()" aria-label="بند کریں">×</button>
+    </div>
+
+    <div class="takhleeq-content">
+
+      <label for="poetName">آپ کا نام / تخلص</label>
+      <input id="poetName" type="text" placeholder="اپنا نام یا تخلص لکھیے">
+
+      <div class="language-heading">
+        <label>شاعری کی زبان</label>
+
+        <div class="language-buttons">
+          <button type="button" class="active" onclick="setLanguage('Urdu',this)">Urdu</button>
+          <button type="button" onclick="setLanguage('Hindi',this)">Hindi</button>
+          <button type="button" onclick="setLanguage('English',this)">Eng</button>
+        </div>
+      </div>
+
+      <textarea id="poemText" placeholder="اپنے دل کی بات یہاں لکھیے..."></textarea>
+
+      <div class="takhleeq-actions">
+        <button type="button" class="save-diary" onclick="savePoem()">
+          💾 Save to Diary
+        </button>
+
+        <button type="button" class="send-approval" onclick="sendPoem()">
+          🚀 Send for Approval
+        </button>
+      </div>
+
+      <p class="takhleeq-note">
+        Save کرنے پر کلام اسی فون کے براؤزر میں محفوظ ہوگا۔<br>
+        Send کرنے پر WhatsApp کھلے گا، جہاں آپ خود کلام بھیج سکیں گے۔
+      </p>
+
+    </div>
+  </div>
+</div>
+
 <script>
+/* موبائل مینو */
+
 const menuToggle = document.getElementById("menuToggle");
 const navlinks = document.getElementById("navlinks");
 
@@ -559,17 +698,125 @@ menuToggle.addEventListener("click", function() {
   navlinks.classList.toggle("show");
 });
 
+/* تلاش */
+
 function searchPoets() {
-  const query = document.getElementById("searchInput").value.trim();
+  const query = document.getElementById("searchInput").value.trim().toLowerCase();
   const cards = document.querySelectorAll(".poet-card");
 
   cards.forEach(function(card) {
     const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(query.toLowerCase()) ? "flex" : "none";
+    card.style.display = text.includes(query) ? "flex" : "none";
   });
 }
 
 document.getElementById("searchInput").addEventListener("input", searchPoets);
+
+/* تخلیق فارم */
+
+let selectedLanguage = "Urdu";
+
+function openTakhleeq() {
+  document.getElementById("takhleeqModal").style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeTakhleeq() {
+  document.getElementById("takhleeqModal").style.display = "none";
+  document.body.style.overflow = "";
+}
+
+function overlayClose(event) {
+  if (event.target.id === "takhleeqModal") {
+    closeTakhleeq();
+  }
+}
+
+function setLanguage(language, button) {
+  selectedLanguage = language;
+
+  document.querySelectorAll(".language-buttons button").forEach(function(btn) {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  const textarea = document.getElementById("poemText");
+
+  if (language === "English") {
+    textarea.style.textAlign = "left";
+    textarea.dir = "ltr";
+  } else {
+    textarea.style.textAlign = "right";
+    textarea.dir = language === "Urdu" ? "rtl" : "auto";
+  }
+}
+
+/* کلام کی معلومات */
+
+function getPoemData() {
+  const name = document.getElementById("poetName").value.trim();
+  const poem = document.getElementById("poemText").value.trim();
+
+  if (!name || !poem) {
+    alert("براہ کرم اپنا نام اور کلام ضرور لکھیے۔");
+    return null;
+  }
+
+  return {
+    name: name,
+    poem: poem,
+    language: selectedLanguage
+  };
+}
+
+/* فون میں محفوظ کرنا */
+
+function savePoem() {
+  const data = getPoemData();
+  if (!data) return;
+
+  try {
+    const diary = JSON.parse(localStorage.getItem("myPoetryDiary") || "[]");
+
+    diary.push({
+      ...data,
+      date: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("myPoetryDiary", JSON.stringify(diary));
+
+    alert("آپ کا کلام اس براؤزر میں محفوظ ہوگیا!");
+  } catch (error) {
+    alert("کلام محفوظ نہیں ہو سکا۔ براہ کرم دوبارہ کوشش کریں۔");
+  }
+}
+
+/* WhatsApp پر منظوری کے لیے بھیجنا */
+
+function sendPoem() {
+  const data = getPoemData();
+  if (!data) return;
+
+  const adminNumber = "917975078705";
+
+  const message =
+`السلام علیکم!
+بزمِ سخنوران کے لیے نیا کلام:
+
+شاعر: ${data.name}
+زبان: ${data.language}
+
+کلام:
+${data.poem}
+
+براہ کرم اسے منظوری کے لیے ملاحظہ فرمائیں۔`;
+
+  const url = "https://wa.me/" + adminNumber +
+              "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
 </script>
 
 </body>
